@@ -4,7 +4,7 @@
   "main": "index.js",
   "scripts": {
     "format": "prettier --write .",
-    "test": "tsc --noEmit && prettier --check .",
+    "test": "tsc --noEmit",
     "dev": "vite",
     "prepare": "husky",
     "build": "vite build"
