@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/simgims",
+  base: "/KWS-Lecture4-5",
 });
