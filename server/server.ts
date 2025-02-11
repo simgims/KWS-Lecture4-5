@@ -11,7 +11,7 @@ const postgresql = connectionString
 
 const app = new Hono();
 
-app.get("KWS-Lecture4-5/api/skoler", async (c) => {
+app.get("/api/skoler", async (c) => {
   console.log("Laster inn skoler");
   const result = await postgresql.query(
     `select
