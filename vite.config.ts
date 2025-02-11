@@ -1,5 +1,9 @@
 import { defineConfig } from "vite";
 
 export default defineConfig({
-  base: "/KWS-Lecture4-5",
+  server: {
+    proxy: {
+      api: "http://localhost:3000",
+    },
+  },
 });

@@ -1,0 +1,26 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsx server.ts",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx --watch server.ts",
+    "db:admin-units": "npm run db:admin-units:download && npm run db:admin-units:import",
+    "db:admin-units:download": "download --extract --out tmp/ https://nedlasting.geonorge.no/geonorge/administrative-enheter-fylker-historiske-data-2023/PostGIS/Basisdata_0000_Norge_25833_Fylker_PostGIS.zip",
+    "db:admin-units:import": "docker exec -i /postgis /usr/bin/psql --user postgres < tmp/Basisdata_0000_Norge_25833_Fylker_PostGIS.sql",
+    "db:counties2023": "npm run db:counties2023:download && npm run db:counties2023:import",
+    "db:counties2023:download": "download --extract --out tmp/ https://nedlasting.geonorge.no/geonorge/Basisdata/Fylker2023/PostGIS/Basisdata_0000_Norge_25833_Fylker2023_PostGIS.zip",
+    "db:counties2023:import": "docker exec -i /postgis /usr/bin/psql --user postgres < tmp/\nBasisdata_0000_Norge_25833_Fylker2023_PostGIS.sql\n"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@hono/node-server": "^1.13.8",
+    "hono": "^4.6.20",
+    "tsx": "^4.19.2"
+  },
+  "devDependencies": {}
+}
